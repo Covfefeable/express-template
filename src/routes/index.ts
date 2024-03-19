@@ -23,7 +23,7 @@ const routerConf: Array<RouterConf> = [
 function routes(app: Express) {
   // 根目录
   app.get("/", (req: Request, res: Response) =>
-    res.status(200).send("express server")
+    res.status(200).send("express server is running...")
   );
 
   routerConf.forEach((conf) => app.use(conf.path, conf.router));
