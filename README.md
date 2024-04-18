@@ -10,8 +10,20 @@ npm i -g pnpm
 pnpm i
 
 # launch the express server locally
-pnpm run dev
+pnpm dev
 
 # send a request to know whether the server side is running
 curl http://127.0.0.1:1337/api/alive
+```
+
+## Deployment
+```bash
+# if pm2 is not installed
+npm i -g pm2
+
+# build the production version
+pnpm build
+
+# launch the express server
+pm2 start ./build/app.js
 ```
