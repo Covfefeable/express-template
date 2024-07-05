@@ -12,7 +12,7 @@ pnpm i
 # launch the express server locally
 pnpm dev
 
-# send a request to know whether the server side is running
+# send a request to know whether the server side is running properly
 curl http://127.0.0.1:1337/api/alive
 ```
 
