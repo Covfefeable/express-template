@@ -1,6 +1,6 @@
 import { Express, Request, Response, Router } from "express";
 import { commonRes } from "../utils/response";
-import { loginRouter } from "./login";
+import { loginRoutes } from "./login";
 
 export interface RouterConf {
   path: string;
@@ -12,14 +12,14 @@ export interface RouterConf {
 const routerConf: Array<RouterConf> = [
   {
     path: "/api",
-    router: Router().get("/alive", async (req: Request, res: Response) => {
+    router: Router().get("/probe", async (req: Request, res: Response) => {
       const result = {
         status: "alive",
       };
       res.status(200).send(commonRes(result));
     }),
   },
-  ...loginRouter
+  ...loginRoutes
 ];
 
 function routes(app: Express) {

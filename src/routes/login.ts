@@ -2,7 +2,7 @@ import { Request, Response, Router } from "express";
 import { RouterConf } from ".";
 import { commonRes } from "../utils/response";
 
-export const loginRouter: Array<RouterConf> = [
+export const loginRoutes: Array<RouterConf> = [
   {
     path: "/api",
     router: Router().get("/login", async (req: Request, res: Response) => {
