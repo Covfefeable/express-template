@@ -1,7 +1,7 @@
 import { RequestHandler, Request, Response } from "express";
 import { userService } from "../../service/user";
 import { commonError, commonRes } from "../../utils/response";
-import { LoginSchema } from "../../modal/user";
+import { LoginSchema } from "../../model/user";
 
 class UserController {
   public login: RequestHandler = async (req: Request, res: Response) => {
