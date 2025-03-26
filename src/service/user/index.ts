@@ -5,6 +5,14 @@ class UserService {
     if (!req.session.userId) {
       // here to insert user login logic
       // for example, query user from database
+
+      // const conn = await createMariaDBConnection();
+      // const rows = await conn.execute(
+      //   "SELECT user_name, user_role FROM user WHERE user_id = ?",
+      //   [req.session.userId]
+      // );
+      // conn.end();
+
       // if user exists, then set session
       return await new Promise((resolve, reject) => {
         req.session.regenerate((err) => {
