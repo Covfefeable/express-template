@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { RouterConf } from ".";
 import { userController } from "../controler/user";
+import { requireLogin } from "./middleware/require-login";
 
 export const userRoutes: Array<RouterConf> = [
   {
@@ -9,6 +10,7 @@ export const userRoutes: Array<RouterConf> = [
   },
   {
     path: "/api",
-    router: Router().get("/logout", userController.logout),
+    // 添加登录验证中间件
+    router: Router().get("/logout", requireLogin, userController.logout),
   },
 ];

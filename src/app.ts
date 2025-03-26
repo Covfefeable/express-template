@@ -16,7 +16,7 @@ app.use(
     secret: env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: env.isProd ? true : false },
+    cookie: { secure: env.isProd },
   })
 );
 
