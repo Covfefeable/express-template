@@ -1,6 +1,6 @@
 import { Express, Request, Response, Router } from "express";
 import { commonRes } from "../utils/response";
-import { loginRoutes } from "./login";
+import { userRoutes } from "./login";
 
 export interface RouterConf {
   path: string;
@@ -19,7 +19,7 @@ const routerConf: Array<RouterConf> = [
       res.status(200).send(commonRes(result));
     }),
   },
-  ...loginRoutes
+  ...userRoutes
 ];
 
 function routes(app: Express) {

@@ -1,21 +1,14 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import { RouterConf } from ".";
-import { commonRes } from "../utils/response";
-import { login, logout } from "../implements/login";
+import { userController } from "../controler/user";
 
-export const loginRoutes: Array<RouterConf> = [
+export const userRoutes: Array<RouterConf> = [
   {
     path: "/api",
-    router: Router().get("/login", async (req: Request, res: Response) => {
-      const result = await login(req.session);
-      res.status(200).send(commonRes(result));
-    }),
+    router: Router().post("/login", userController.login),
   },
   {
     path: "/api",
-    router: Router().get("/logout", async (req: Request, res: Response) => {
-      const result = await logout(req.session);
-      res.status(200).send(commonRes(result));
-    }),
+    router: Router().get("/logout", userController.logout),
   },
 ];
