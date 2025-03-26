@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { RouterConf } from ".";
-import { userController } from "../controler/user";
+import { userController } from "../controller/user";
 import { requireLogin } from "./middleware/require-login";
 
 export const userRoutes: Array<RouterConf> = [
