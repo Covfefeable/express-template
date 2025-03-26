@@ -1,4 +1,4 @@
-# Express-Server-Template
+# Express-Template
 
 一个基于 Express + TypeScript 的服务端项目模板，集成了常用的中间件和工具，帮助你快速搭建安全、可靠的 Node.js 服务。
 
@@ -31,9 +31,15 @@ src/
 
 ```bash
 NODE_ENV=development     # 运行环境：development/production
+HOST=localhost          # 服务主机地址
 PORT=1337               # 服务端口
-CORS_ORIGIN=*           # CORS 配置
-SESSION_SECRET=xxx      # Session 密钥
+CORS_ORIGIN=http://localhost:1337  # CORS 配置
+SESSION_SECRET=your-secret         # Session 密钥
+
+DB_HOST=127.0.0.1       # 数据库主机地址
+DB_PORT=3306            # 数据库端口
+DB_USER=your-mariadb-user         # 数据库用户名
+DB_PASSWORD=your-mariadb-password  # 数据库密码
 ```
 
 ## 本地开发
@@ -74,3 +80,4 @@ pm2 start ./build/app.js
 - Pino - 日志系统
 - dotenv & envalid - 环境变量管理
 - express-session - 会话管理
+- mariadb - 数据库
