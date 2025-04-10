@@ -1,6 +1,6 @@
 import { Express, Request, Response, Router } from "express";
 import { commonRes } from "../utils/response";
-import { userRoutes } from "./login";
+import { userRoutes } from "./user";
 
 export interface RouterConf {
   path: string;
