@@ -17,8 +17,8 @@
 ```
 src/
   ├── app.ts              # 应用入口
-  ├── controler/          # 控制器层
-  ├── modal/              # 数据模型
+  ├── controller/         # 控制器层
+  ├── model/              # 数据模型
   ├── routes/             # 路由配置
   ├── service/            # 业务逻辑
   ├── types/              # 类型定义
@@ -30,16 +30,16 @@ src/
 在项目根目录创建 `.env` 文件，支持以下配置项：
 
 ```bash
-NODE_ENV=development     # 运行环境：development/production
-HOST=localhost          # 服务主机地址
-PORT=1337               # 服务端口
-CORS_ORIGIN=http://localhost:1337  # CORS 配置
-SESSION_SECRET=your-secret         # Session 密钥
+NODE_ENV=development
+PORT=1337
+CORS_ORIGIN=http://localhost:1337
+SESSION_SECRET=your-secret
 
-DB_HOST=127.0.0.1       # 数据库主机地址
-DB_PORT=3306            # 数据库端口
-DB_USER=your-mariadb-user         # 数据库用户名
-DB_PASSWORD=your-mariadb-password  # 数据库密码
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_USER=your-mariadb-user
+DB_PASSWORD=your-mariadb-password
+DB_NAME=your-db-name
 ```
 
 ## 本地开发
@@ -55,7 +55,7 @@ pnpm i
 pnpm dev
 
 # 测试服务是否正常运行
-curl http://127.0.0.1:1337/api/alive
+curl http://127.0.0.1:1337/api/probe
 ```
 
 ## 部署
